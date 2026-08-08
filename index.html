@@ -32,7 +32,7 @@
   --cream-dark: #F3EEE2;
   --ink: #1C1C1E;
   --ink-light: #48484A;
-  --ink-faint: #7F7F85;
+  --ink-faint: #6B6B70;
   --dark-panel: #101420;
   --dark-panel-2: #151B2C;
   --on-dark: #F5F5F7;
@@ -155,7 +155,7 @@ body.in-dark .nav-logo { color: var(--on-dark); }
     var(--cream);
   color: var(--ink);
   overflow: hidden;
-  padding: 120px 20px 90px;
+  padding: 128px 20px 72px;
 }
 .hero-inner { position: relative; z-index: 2; max-width: 920px; }
 .hero-kicker {
@@ -194,51 +194,88 @@ body.in-dark .nav-logo { color: var(--on-dark); }
 .btn-bright:hover { background: var(--brand-deep); transform: translateY(-3px); box-shadow: 0 14px 34px rgba(43,127,216,0.25); }
 .btn-line { border: 1.5px solid rgba(28,28,30,0.22); color: var(--ink); background: rgba(255,255,255,0.5); }
 .btn-line:hover { border-color: var(--ink); transform: translateY(-3px); background: #fff; box-shadow: 0 10px 24px rgba(28,28,30,0.08); }
-.hero-scroll {
-  position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-  z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 10px;
-  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.22em;
-  color: var(--ink-faint); text-transform: uppercase;
-}
-.hero-scroll .wheel { width: 22px; height: 36px; border: 1.5px solid rgba(28,28,30,0.28); border-radius: 12px; position: relative; }
-.hero-scroll .wheel::after {
-  content: ''; position: absolute; top: 7px; left: 50%; width: 3px; height: 7px;
-  margin-left: -1.5px; border-radius: 3px; background: var(--brand);
-  animation: wheel 1.8s var(--ease) infinite;
-}
-@keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(12px); opacity: 0; } 100% { opacity: 0; } }
 
 /* ============================================
-   MARQUEE — 项目走马灯
+   终端 MacBook + 统计条
    ============================================ */
-.marquee-band {
-  background: var(--highlight);
-  border-block: 1px solid rgba(28,28,30,0.08);
-  overflow: hidden;
-  padding: 16px 0;
-  transform: rotate(0deg);
+.macbook-wrapper { display: flex; flex-direction: column; align-items: center; margin-top: 54px; }
+.macbook-screen-bezel {
+  background: #2a2a30; border-radius: 16px 16px 0 0; padding: 12px 14px 14px; width: min(680px, 94vw);
+  box-shadow: 0 30px 60px rgba(28,28,30,0.13);
 }
-.marquee-track {
-  display: flex; gap: 44px; width: max-content;
-  animation: marquee 30s linear infinite;
+.macbook-notch { width: 120px; height: 13px; background: #17171b; border-radius: 0 0 9px 9px; margin: -12px auto 10px; }
+.macbook-screen {
+  width: 100%; aspect-ratio: 680 / 400; background: #151821;
+  border-radius: 6px; overflow: hidden; position: relative; text-align: left;
 }
-.marquee-band:hover .marquee-track { animation-play-state: paused; }
-.marquee-track span {
-  font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;
-  color: var(--ink); white-space: nowrap; letter-spacing: 0.02em;
-  display: inline-flex; align-items: center; gap: 44px;
+.macbook-screen::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.025) 2px, rgba(255,255,255,0.025) 3px);
 }
-.marquee-track span::after { content: '✦'; font-size: 0.9rem; color: var(--pop-text); }
-@keyframes marquee { to { transform: translateX(-50%); } }
+.term-bar {
+  display: flex; align-items: center; gap: 7px; padding: 9px 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.term-bar i { width: 11px; height: 11px; border-radius: 50%; }
+.term-bar i:nth-child(1) { background: #ff5f57; }
+.term-bar i:nth-child(2) { background: #febc2e; }
+.term-bar i:nth-child(3) { background: #28c840; }
+.term-title {
+  margin-left: auto; margin-right: auto; transform: translateX(-16px);
+  font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,0.45);
+}
+.terminal {
+  padding: 16px 18px; font-family: var(--font-mono);
+  font-size: clamp(11px, 1.55vw, 14px); line-height: 2.05; color: #e6e8ee; height: calc(100% - 38px); overflow: hidden;
+}
+.terminal .t-prompt { color: #4ade80; }
+.terminal .t-cmd { color: #fff; }
+.terminal .t-out { color: #9aa3b5; }
+.terminal .t-hl { color: #F4D758; }
+.terminal .t-blue { color: #7fb4f2; }
+.terminal .t-cursor {
+  display: inline-block; width: 8px; height: 1.05em; background: #fff;
+  vertical-align: text-bottom; animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.macbook-hinge { width: min(692px, 96vw); height: 3px; background: linear-gradient(180deg, #8a8a8e, #6e6e72); border-radius: 0 0 2px 2px; }
+.macbook-base {
+  width: min(730px, 99vw); height: 14px;
+  background: linear-gradient(180deg, #c8c8cc 0%, #a8a8ac 30%, #b8b8bc 70%, #9a9a9e 100%);
+  border-radius: 0 0 12px 12px;
+}
+.macbook-shadow {
+  width: min(700px, 94vw); height: 34px; margin-top: 6px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.16) 0%, transparent 70%);
+}
+.stats-row { display: flex; gap: 0; flex-wrap: wrap; justify-content: center; margin-top: 44px; }
+.stat { padding: 4px 30px; text-align: center; position: relative; }
+.stat + .stat::before {
+  content: ''; position: absolute; left: 0; top: 16%; bottom: 16%; width: 1px; background: var(--border);
+}
+.stat strong {
+  display: block; font-family: var(--font-display); font-weight: 800; letter-spacing: -0.02em;
+  font-size: clamp(21px, 2.6vw, 28px); color: var(--ink);
+}
+.stat strong em { font-style: normal; color: var(--brand-text); }
+.stat span { font-size: 12.5px; color: var(--ink-faint); }
+@media (max-width: 640px) {
+  .stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 0; margin-top: 36px; }
+  .stat + .stat::before { display: none; }
+  .stat { padding: 4px 10px; }
+}
+.b-platforms { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.b-platforms span {
+  font-size: 0.8rem; font-weight: 500; color: var(--brand-text);
+  background: var(--brand-tint); border-radius: 999px; padding: 5px 13px;
+}
+.b-highlight {
+  margin-top: 18px; display: inline-flex; align-items: center;
+  background: var(--highlight-soft); border: 1px dashed rgba(214,181,32,0.6);
+  border-radius: 12px; padding: 11px 16px; font-size: 0.88rem; color: var(--ink-light);
+}
+.b-highlight b { color: var(--ink); font-weight: 700; }
 
-/* 自定义光标（仅桌面） */
-.cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; border-radius: 50%; transform: translate(-50%, -50%); }
-.cursor-dot { width: 6px; height: 6px; background: var(--ink); transition: background 0.2s; }
-.cursor-ring { width: 34px; height: 34px; border: 1.5px solid rgba(28,28,30,0.28); transition: width 0.25s var(--ease), height 0.25s var(--ease), border-color 0.25s, background 0.25s; }
-body.cursor-hover .cursor-ring { width: 54px; height: 54px; border-color: var(--brand); background: rgba(43,127,216,0.08); }
-body.in-dark .cursor-dot { background: var(--on-dark); }
-body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
-@media (pointer: coarse), (max-width: 860px) { .cursor-dot, .cursor-ring { display: none; } }
 /* ============================================
    ABOUT
    ============================================ */
@@ -323,9 +360,8 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
   transition: opacity 0.35s;
 }
 .b-cell:hover::after { opacity: 1; }
-.b-big { grid-column: span 2; grid-row: span 2; min-height: 460px; }
+.b-big { grid-column: span 2; grid-row: span 2; min-height: 420px; }
 .b-wide { grid-column: span 2; }
-.b-ink { background: var(--ink); color: #fff; border-color: transparent; }
 .b-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .b-name { font-family: var(--font-mono); font-weight: 600; font-size: 1.02rem; letter-spacing: -0.01em; }
 .b-star {
@@ -333,17 +369,14 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
   background: var(--cream-dark); border: 1px solid var(--border); border-radius: 999px;
   padding: 4px 12px; white-space: nowrap;
 }
-.b-ink .b-star { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); }
 .b-desc { margin-top: 12px; font-size: 0.92rem; color: var(--ink-light); line-height: 1.85; flex: 1; }
-.b-ink .b-desc { color: rgba(255,255,255,0.68); }
 .b-big .b-name { font-size: 1.3rem; }
-.b-big .b-desc { font-size: 1rem; max-width: 420px; }
+.b-big .b-desc { font-size: 1rem; max-width: 520px; }
 .b-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
 .b-tags span { font-family: var(--font-mono); font-size: 0.7rem; color: var(--ink-faint); border: 1px solid var(--border); border-radius: 999px; padding: 4px 11px; }
 .b-links { display: flex; gap: 18px; margin-top: auto; padding-top: 20px; }
 .b-links a { font-size: 0.88rem; font-weight: 600; color: var(--brand-text); display: inline-flex; align-items: center; gap: 5px; transition: gap 0.25s, color 0.2s; }
 .b-links a:hover { color: var(--brand); gap: 9px; }
-.b-ink .b-links a { color: var(--highlight); }
 .eq { display: inline-flex; gap: 3px; align-items: flex-end; height: 20px; margin-left: 10px; }
 .eq i { width: 3px; border-radius: 2px; background: var(--pop); animation: eq 1s ease-in-out infinite; }
 .eq i:nth-child(1) { height: 40%; animation-delay: 0s; }
@@ -380,7 +413,7 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
 .site-cell .s-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .site-cell strong { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--ink); }
 .site-cell p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.75; flex: 1; }
-.site-cell .s-url { font-family: var(--font-mono); font-size: 0.72rem; color: var(--brand-text); opacity: 0.85; word-break: break-all; }
+.site-cell .s-url { font-family: var(--font-mono); font-size: 0.76rem; color: var(--brand-text); opacity: 0.85; word-break: break-all; }
 /* ============================================
    WRITING
    ============================================ */
@@ -393,7 +426,7 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
   position: relative;
 }
 .post-row:hover { background: rgba(43,127,216,0.045); padding-left: 22px; }
-.post-date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-faint); min-width: 96px; flex-shrink: 0; }
+.post-date { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-faint); min-width: 96px; flex-shrink: 0; }
 .post-title { flex: 1; font-size: 1.02rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.6; transition: color 0.2s; }
 .post-row:hover .post-title { color: var(--brand-text); }
 .post-tag { font-size: 0.74rem; font-weight: 500; color: var(--brand-text); background: var(--brand-tint); border-radius: 999px; padding: 4px 13px; flex-shrink: 0; }
@@ -424,7 +457,7 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
 .c-pill:hover { transform: translateY(-3px); border-color: var(--brand); color: var(--brand-text); box-shadow: 0 12px 26px rgba(28,28,30,0.08); }
 .footer { padding: 60px 0 46px; background: var(--cream-dark); text-align: center; }
 .footer .f-brand { font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-light); }
-.footer .f-line { margin-top: 12px; font-size: 0.76rem; color: var(--ink-faint); line-height: 2.2; }
+.footer .f-line { margin-top: 12px; font-size: 0.8rem; color: var(--ink-faint); line-height: 2.2; }
 .footer .f-line a { color: var(--ink-faint); transition: color 0.2s; }
 .footer .f-line a:hover { color: var(--brand-text); }
 
@@ -439,12 +472,10 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
 .hero h1.hero-anim { animation-delay: 0.25s; }
 .hero-sub.hero-anim { animation-delay: 0.45s; }
 .hero-actions.hero-anim { animation-delay: 0.62s; }
-.hero-scroll.hero-anim { animation-delay: 1s; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal, .hero-anim { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
-  .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
   .eq i { animation: none; }
 }
 
@@ -470,8 +501,6 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
   .post-date { min-width: auto; }
   .post-tag { display: none; }
   .stats-row { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .marquee-track { gap: 28px; }
-  .marquee-track span { gap: 28px; }
   .term-card .t-body { font-size: 0.78rem; overflow-x: auto; }
   .hero-kicker { font-size: 0.74rem; padding: 8px 14px; }
   .c-pill { font-size: 0.84rem; padding: 10px 16px; }
@@ -490,36 +519,38 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
   </div>
 </header>
 
-<div class="cursor-dot" id="cursorDot"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 <section class="hero" id="top">
   <div class="hero-inner">
     <div class="hero-kicker hero-anim"><span class="dot"></span>88lin@garden · open to collaborate</div>
     <h1 class="hero-anim">把前沿 AI，<br>做成能交付的<span class="hl">东西</span>。</h1>
-    <p class="hero-sub hero-anim">你好，我是 <b>88lin</b> —— AI 研究者与 Agent 工程实践者，<b>茉灵智库</b>主理人。<br>收集有用的，也保留有趣的。</p>
-    <div class="hero-actions hero-anim">
+    <p class="hero-sub hero-anim">你好，我是 <b>88lin</b> —— AI 研究者与 Agent 工程实践者，<b>茉灵智库</b>主理人。<br>追踪前沿，但更在意落地：用 Agent 工作流把复杂需求拆成可交付、可维护的工程结果。</p>
+
+    <div class="macbook-wrapper reveal" style="--delay:120ms">
+      <div class="macbook-screen-bezel">
+        <div class="macbook-notch"></div>
+        <div class="macbook-screen">
+          <div class="term-bar"><i></i><i></i><i></i><span class="term-title">88lin@garden ~ %</span></div>
+          <div class="terminal" id="terminalLines" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="macbook-hinge"></div>
+      <div class="macbook-base"></div>
+      <div class="macbook-shadow"></div>
+    </div>
+
+    <div class="stats-row reveal" style="--delay:200ms">
+      <div class="stat"><strong><em>4600</em>+</strong><span>GitHub Stars</span></div>
+      <div class="stat"><strong><em>55</em>+</strong><span>博客文章</span></div>
+      <div class="stat"><strong><em>50</em>+</strong><span>导航站入口</span></div>
+      <div class="stat"><strong><em id="statDays">1850</em>+</strong><span>持续运行天数</span></div>
+    </div>
+
+    <div class="hero-actions reveal" style="--delay:260ms">
       <a class="btn btn-bright" href="https://blog.88lin.eu.org" target="_blank" rel="noreferrer">进入博客 →</a>
-      <a class="btn btn-line" href="https://github.com/88lin" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="btn btn-line" href="#works">看看我的项目 ↓</a>
     </div>
   </div>
-  <div class="hero-scroll hero-anim">
-    <div class="wheel"></div>
-    Scroll to explore
-  </div>
 </section>
-<div class="marquee-band" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack">
-    <span>video_vip ⭐4566+</span>
-    <span>Lofi Radio</span>
-    <span>电脑维修 Skill</span>
-    <span>茉灵智库博客</span>
-    <span>TextCard Studio</span>
-    <span>工具导航站</span>
-    <span>1 Person + AI = 1 Team</span>
-    <span>深度研究</span>
-  </div>
-</div>
-
 <section class="about" id="about">
   <div class="container">
     <div class="sec-label reveal">01 · whoami</div>
@@ -578,7 +609,9 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
           <span class="b-name">video_vip</span>
           <span class="b-star">★ 4566+ · 开源热榜</span>
         </div>
-        <p class="b-desc">全网 VIP 视频免费解析脚本：集成多个第三方解析接口，去广告解锁会员限制。适配 PC + 移动端，支持爱奇艺、腾讯、优酷、芒果 TV、bilibili 等主流平台，完全免费、长期维护。</p>
+        <p class="b-desc">全网 VIP 视频免费解析脚本：集成多个第三方解析接口，去广告解锁会员限制。适配 PC + 移动端，完全免费、长期维护。</p>
+        <div class="b-platforms"><span>爱奇艺</span><span>腾讯视频</span><span>优酷</span><span>芒果 TV</span><span>bilibili</span></div>
+        <div class="b-highlight"><b>★ 4566+</b>&nbsp;stars · 完全免费 · 长期维护更新</div>
         <div class="b-tags"><span>JavaScript</span><span>油猴脚本</span><span>全平台适配</span></div>
         <div class="b-links">
           <a href="https://github.com/88lin/video_vip" target="_blank" rel="noreferrer">GitHub →</a>
@@ -625,10 +658,16 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
         </div>
       </article>
 
-      <article class="b-cell b-ink b-wide reveal" style="--delay:210ms">
+      <article class="b-cell b-wide reveal" style="--delay:210ms">
         <div class="b-head"><span class="b-name">more ·</span><span class="b-star">diataxis-docs · mydesign-system · my-skills …</span></div>
         <p class="b-desc">还有技术文档写作 Skill、个人 IP 设计系统、油猴脚本合集等十多个开源仓库，在 GitHub 上慢慢逛。</p>
         <div class="b-links"><a href="https://github.com/88lin" target="_blank" rel="noreferrer">github.com/88lin →</a></div>
+      </article>
+
+      <article class="b-cell b-wide reveal" style="--delay:260ms">
+        <div class="b-head"><span class="b-name">开源进行时</span><span class="b-star">GitHub · 长期维护</span></div>
+        <p class="b-desc">所有项目的源码、更新动态与 Issue 讨论都在 GitHub；认真回复每一个 Issues，欢迎 Star 与共建。</p>
+        <div class="b-links"><a href="https://github.com/88lin" target="_blank" rel="noreferrer">Follow @88lin →</a></div>
       </article>
     </div>
   </div>
@@ -736,8 +775,8 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
 </section>
 <section class="contact" id="contact">
   <div class="container">
-    <div class="sec-label reveal" style="justify-content:center;">05 · talk-to-me</div>
-    <h2 class="contact-title reveal" style="--delay:80ms">有想法？<br>那就<span class="hl">聊聊</span>。</h2>
+    <div class="sec-label reveal" style="justify-content:center;">05 · contact</div>
+    <h2 class="contact-title reveal" style="--delay:80ms">欢迎聊聊 <span class="hl">AI Agent、工具链</span>，<br>或者任何有趣的合作想法</h2>
     <p class="contact-desc reveal" style="--delay:160ms">无论是 AI Agent 工程化、MCP 工具链与知识库，还是网站开发、电脑维修的需求，或者只是想打个招呼——都欢迎。</p>
     <div class="contact-links reveal" style="--delay:240ms">
       <a class="c-pill" href="mailto:431761794@qq.com">✉️ 431761794@qq.com</a>
@@ -764,8 +803,74 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
   </div>
 </footer>
 <script>
+/* ===== 终端打字动画 ===== */
+(function () {
+  const term = document.getElementById('terminalLines');
+  if (!term) return;
+  const script = [
+    { cmd: 'whoami', out: [['', '88lin · AI 研究者 & Agent 工程实践者']] },
+    { cmd: 'cat mission.md', out: [['', '把前沿探索，变成可交付的工程结果']] },
+    { cmd: 'ls ~/garden', out: [['t-blue', 'blog/  go/  lofi/  repair/  research/  learn/']] },
+    { cmd: 'echo $STATUS', out: [['t-hl', '收集有用的，也保留有趣的 ✦']] }
+  ];
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function makeLine(cls) {
+    const div = document.createElement('div');
+    div.className = cls;
+    term.appendChild(div);
+    return div;
+  }
+
+  async function typeCmd(text) {
+    const line = makeLine('t-line');
+    line.innerHTML = '<span class="t-prompt">$ </span><span class="t-cmd"></span><span class="t-cursor"></span>';
+    const target = line.querySelector('.t-cmd');
+    const cursor = line.querySelector('.t-cursor');
+    if (reduced) {
+      target.textContent = text;
+      cursor.remove();
+      return;
+    }
+    for (const ch of text) {
+      target.textContent += ch;
+      await new Promise(r => setTimeout(r, 52 + Math.random() * 46));
+    }
+    cursor.remove();
+  }
+
+  async function showOut(segs) {
+    const line = makeLine('t-line');
+    segs.forEach(([cls, text]) => {
+      const sEl = document.createElement('span');
+      sEl.className = 't-out ' + cls;
+      sEl.textContent = text;
+      line.appendChild(sEl);
+    });
+    await new Promise(r => setTimeout(r, reduced ? 0 : 240));
+  }
+
+  async function run() {
+    await new Promise(r => setTimeout(r, reduced ? 0 : 500));
+    for (const step of script) {
+      await typeCmd(step.cmd);
+      await showOut(step.out);
+    }
+    const last = makeLine('t-line');
+    last.innerHTML = '<span class="t-prompt">$ </span><span class="t-cursor"></span>';
+  }
+
+  let started = false;
+  const io = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !started) { started = true; run(); io.disconnect(); }
+  }, { threshold: 0.3 });
+  io.observe(term);
+})();
+</script>
+
+<script>
 /* ============================================
-   滚动渐显 / 导航状态 / 跑马灯 / 统计
+   滚动渐显 / 导航状态 / 统计
    ============================================ */
 (function () {
   'use strict';
@@ -798,38 +903,12 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
   }, { rootMargin: '-40% 0px -52% 0px' });
   sections.forEach(function (s) { if (s) secIO.observe(s); });
 
-  // 跑马灯：复制一份实现无缝循环
-  var track = document.getElementById('marqueeTrack');
-  if (track) {
-    var clone = track.innerHTML;
-    track.innerHTML = clone + clone;
-  }
-
-  // 统计：运行天数实时计算 + 数字滚动
-  var days = Math.floor((Date.now() - new Date('2021-07-12T00:00:00+08:00')) / 86400000);
+  // 统计：hero 运行天数实时计算
   var daysEl = document.getElementById('statDays');
-  if (daysEl) daysEl.textContent = String(days);
-
-  document.querySelectorAll('.stat-tile b em').forEach(function (el) {
-    var final = parseFloat(el.textContent);
-    if (isNaN(final)) return;
-    var started = false;
-    var cio = new IntersectionObserver(function (entries) {
-      if (!entries[0].isIntersecting || started) return;
-      started = true; cio.disconnect();
-      var t0 = performance.now(), dur = 1400;
-      (function step(now) {
-        var p = Math.min((now - t0) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = String(Math.round(final * eased));
-        if (p < 1) requestAnimationFrame(step);
-      })(t0);
-    }, { threshold: 0.5 });
-    cio.observe(el);
-  });
+  if (daysEl) daysEl.textContent = String(Math.floor((Date.now() - new Date('2021-07-12T00:00:00+08:00')) / 86400000));
 })();
 /* ============================================
-   Bento 聚光灯 + 自定义光标（仅桌面）
+   Bento 聚光灯
    ============================================ */
 (function () {
   'use strict';
@@ -843,37 +922,6 @@ body.in-dark .cursor-ring { border-color: rgba(245,245,247,0.4); }
     });
   });
 
-  // 自定义光标
-  var fine = window.matchMedia('(pointer: fine)').matches && window.innerWidth > 860;
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var dot = document.getElementById('cursorDot');
-  var ring = document.getElementById('cursorRing');
-  if (!fine || reduced || !dot || !ring) {
-    if (dot) dot.style.display = 'none';
-    if (ring) ring.style.display = 'none';
-    return;
-  }
-  var rx = -100, ry = -100, tx = -100, ty = -100, shown = false;
-  document.addEventListener('pointermove', function (e) {
-    tx = e.clientX; ty = e.clientY;
-    if (!shown) { shown = true; rx = tx; ry = ty; dot.style.opacity = ring.style.opacity = 1; }
-    dot.style.transform = 'translate(' + (tx - 3) + 'px,' + (ty - 3) + 'px)';
-  }, { passive: true });
-  (function loop() {
-    rx += (tx - rx) * 0.16; ry += (ty - ry) * 0.16;
-    ring.style.transform = 'translate(' + (rx - 17) + 'px,' + (ry - 17) + 'px)';
-    requestAnimationFrame(loop);
-  })();
-  document.addEventListener('pointerover', function (e) {
-    if (e.target.closest('a, button, .b-cell, .site-cell, .post-row, .id-card, .stat-tile')) {
-      document.body.classList.add('cursor-hover');
-    }
-  });
-  document.addEventListener('pointerout', function (e) {
-    if (e.target.closest('a, button, .b-cell, .site-cell, .post-row, .id-card, .stat-tile')) {
-      document.body.classList.remove('cursor-hover');
-    }
-  });
 })();
 </script>
 </body>
