@@ -1,33 +1,28 @@
-# hiesther.me ✦
+# 88lin · 茉灵智库 ✦
 
-不二的个人网站 — 一个非技术背景设计师用 AI 搓出来的互联网小家。
-
-🔗 **Live**: [hiesther.me](https://hiesther.me)
+我的个人网站 — 一个 AI 研究者与 Agent 工程实践者的互联网小家。
 
 ## 关于
 
-这是我的第三版个人网页，一个 IP 驱动的桌面风格网站。
+这里是「88lin / 茉灵智库」的主页，把项目、站点、博客与分享整理成一站式入口。
 
-- **主页** — 教程、分享、HTML 展示页的入口
-- **作品集** — 产品设计作品与项目经历
-- **无限白板** — 自由探索的 Moodboard
+- **关于我** — AI 研究者与 Agent 工程实践者的自我介绍
+- **精选项目** — video_vip、lofi-radio-web、computer-repair-skill 等开源作品
+- **我的站点** — 博客、导航站、维修技能站等站点矩阵
+- **最新文章** — 来自 [茉灵智库博客](https://blog.88lin.eu.org) 的最新内容
+
+## 相关链接
+
+| 名称 | 地址 |
+|------|------|
+| 博客 | [blog.88lin.eu.org](https://blog.88lin.eu.org) |
+| 导航站 | [go.88lin.eu.org](https://go.88lin.eu.org) |
+| GitHub | [github.com/88lin](https://github.com/88lin) |
 
 ## 技术栈
 
-纯前端，零框架。HTML + CSS + Vanilla JS，部署在 GitHub Pages。
-
-## 版本进化
-
-| 版本 | 特点 | 文件 |
-|------|------|------|
-| Ver 1 | 简单自我介绍 | `website-ver1.html` |
-| Ver 2 | 终端穿越 + 无限白板 | `website-ver2.html` |
-| Ver 3 | 桌面 OS 风格，IP 载体 | `index.html` |
-
-## 制作工具
-
-这个网站 100% 由我和 [Cola](https://cola.app) 协作完成——我负责定调和审美决策，Cola 负责执行和发散。
+纯前端，零框架。HTML + CSS + Vanilla JS，单文件 `index.html`，可直接部署在 GitHub Pages。
 
 ## License
 
-[CC BY-NC 4.0](./LICENSE.md) — 可以看、学习、参考，但请注明出处，不可商用。
+模板基于 [ESTHER 不二](https://hiesther.me) 的开源个人网站改写，遵循 [CC BY-NC 4.0](./LICENSE.md) — 可以看、学习、参考，但请注明出处，不可商用。
