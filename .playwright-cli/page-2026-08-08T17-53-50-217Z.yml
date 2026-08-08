@@ -1,0 +1,303 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - generic [ref=e2]:
+      - link "关于" [ref=e3] [cursor=pointer]:
+        - /url: "#about"
+      - link "项目" [ref=e4] [cursor=pointer]:
+        - /url: "#works"
+      - link "站点" [ref=e5] [cursor=pointer]:
+        - /url: "#sites"
+      - link "文章" [ref=e6] [cursor=pointer]:
+        - /url: "#writing"
+      - link "博客 ↗" [ref=e7] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org
+  - generic [ref=e9]:
+    - generic [ref=e10]: 88lin@garden · open to collaborate
+    - heading "把前沿 AI， 做成能交付的东西。" [level=1] [ref=e12]:
+      - text: 把前沿 AI，
+      - text: 做成能交付的东西。
+    - paragraph [ref=e13]:
+      - text: 你好，我是 88lin —— AI 研究者与 Agent 工程实践者，茉灵智库主理人。
+      - text: 追踪前沿，但更在意落地：用 Agent 工作流把复杂需求拆成可交付、可维护的工程结果。
+    - generic [ref=e22]: 88lin@garden ~ %
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - strong [ref=e29]:
+          - emphasis [ref=e30]: "4600"
+          - text: +
+        - text: GitHub Stars
+      - generic [ref=e31]:
+        - strong [ref=e32]:
+          - emphasis [ref=e33]: "55"
+          - text: +
+        - text: 博客文章
+      - generic [ref=e34]:
+        - strong [ref=e35]:
+          - emphasis [ref=e36]: "50"
+          - text: +
+        - text: 导航站入口
+      - generic [ref=e37]:
+        - strong [ref=e38]:
+          - emphasis [ref=e39]: "1854"
+          - text: +
+        - text: 持续运行天数
+    - generic [ref=e40]:
+      - link "进入博客 →" [ref=e41] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org
+      - link "看看我的项目 ↓" [ref=e42] [cursor=pointer]:
+        - /url: "#works"
+  - generic [ref=e44]:
+    - generic [ref=e45]: 01 · whoami
+    - heading "读源码、搭原型、踩坑、复盘 让每一次实践都留下能复用的东西" [level=2] [ref=e46]:
+      - text: 读源码、搭原型、踩坑、复盘
+      - text: 让每一次实践都留下能复用的东西
+    - paragraph [ref=e47]: 我追踪 AI 领域的最新进展，但更在意它们能不能落地——用 Agent 工作流把复杂需求拆成可交付、可维护、可复盘的工程结果。前沿跑得快，地基更要稳；比起停留在概念，我更愿意动手把想法跑通。
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - img "88lin 头像" [ref=e51]
+          - generic [ref=e52]:
+            - generic [ref=e53]: 88lin · 茉灵智库
+            - generic [ref=e54]: AI researcher / agent-engineering practitioner
+        - generic [ref=e55]:
+          - generic [ref=e56]: AI Agent 工程化
+          - generic [ref=e57]: 开源信仰者
+          - generic [ref=e58]: 网站开发 / 电脑维修
+        - generic [ref=e59]: 以 Codex / Claude Code 多智能体协同贯穿开发与科研全流程；用 MCP 打通浏览器、GitHub、Notion 与部署工具，让 Agent 直接触达真实的项目上下文。
+      - generic [ref=e60]:
+        - emphasis [ref=e65]: 88lin@garden ~ %
+        - generic [ref=e66]:
+          - generic [ref=e67]: $ whoami
+          - generic [ref=e68]: "> AI 研究者 & Agent 工程实践者"
+          - generic [ref=e69]: $ ls ~/garden
+          - generic [ref=e70]: "> blog/ nav/ repair/ lofi/ research/"
+          - generic [ref=e71]: $ cat motto.txt
+          - generic [ref=e72]: "> 收集有用的，也保留有趣的 ✦"
+          - generic [ref=e73]: $
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - emphasis [ref=e78]: "1850"
+          - text: 天
+        - generic [ref=e79]: 数字花园持续运行 · 2021-07-12 起
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - emphasis [ref=e82]: "4600"
+          - text: +
+        - generic [ref=e83]: GitHub Stars · video_vip 等开源项目
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - emphasis [ref=e86]: "55"
+          - text: +
+        - generic [ref=e87]: 博客文章 · 教程与思维认知
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - emphasis [ref=e90]: "50"
+          - text: +
+        - generic [ref=e91]: 导航站收录入口 · 工具与趣味并存
+  - generic [ref=e93]:
+    - generic [ref=e94]: 02 · ls works/
+    - heading "动手把想法跑通" [level=2] [ref=e95]
+    - paragraph [ref=e96]: 从爆款油猴脚本到 AI Agent Skills——每个项目都来自真实需求，并且长期维护。
+    - generic [ref=e97]:
+      - article [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e100]: video_vip
+          - generic [ref=e101]: ★ 4566+ · 开源热榜
+        - paragraph [ref=e102]: 全网 VIP 视频免费解析脚本：集成多个第三方解析接口，去广告解锁会员限制。适配 PC + 移动端，完全免费、长期维护。
+        - generic [ref=e103]:
+          - generic [ref=e104]: 爱奇艺
+          - generic [ref=e105]: 腾讯视频
+          - generic [ref=e106]: 优酷
+          - generic [ref=e107]: 芒果 TV
+          - generic [ref=e108]: bilibili
+        - generic [ref=e109]:
+          - generic [ref=e110]: ★ 4566+
+          - text: stars · 完全免费 · 长期维护更新
+        - generic [ref=e111]:
+          - generic [ref=e112]: JavaScript
+          - generic [ref=e113]: 油猴脚本
+          - generic [ref=e114]: 全平台适配
+        - generic [ref=e115]:
+          - link "GitHub →" [ref=e116] [cursor=pointer]:
+            - /url: https://github.com/88lin/video_vip
+          - link "使用教程 →" [ref=e117] [cursor=pointer]:
+            - /url: https://blog.88lin.eu.org/article/46
+      - article [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120]: lofi-radio-web
+          - generic [ref=e126]: ★ 87
+        - paragraph [ref=e127]: 专注场景的 Lofi 电台：macOS 灵动岛设计，21 个精选频道，打开即用。
+        - generic [ref=e128]:
+          - link "GitHub →" [ref=e129] [cursor=pointer]:
+            - /url: https://github.com/88lin/lofi-radio-web
+          - link "听 →" [ref=e130] [cursor=pointer]:
+            - /url: https://lofi.88lin.eu.org
+      - article [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]: computer-repair-skill
+          - generic [ref=e134]: ★ 7
+        - paragraph [ref=e135]: 让 Codex / Claude Code 成为电脑维修助手：62 个 Playbook，先取证、再计划、确认后修改。
+        - generic [ref=e136]:
+          - link "GitHub →" [ref=e137] [cursor=pointer]:
+            - /url: https://github.com/88lin/computer-repair-skill
+          - link "使用 →" [ref=e138] [cursor=pointer]:
+            - /url: https://repair.88lin.eu.org/
+      - article [ref=e139]:
+        - generic [ref=e140]:
+          - generic [ref=e141]: gzh-design-skill
+          - generic [ref=e142]: Skill
+        - paragraph [ref=e143]: Markdown 一键排成公众号精致 HTML：6 套主题 + 主题生成器 + 双关卡校验。
+        - link "GitHub →" [ref=e145] [cursor=pointer]:
+          - /url: https://github.com/88lin/gzh-design-skill
+      - article [ref=e146]:
+        - generic [ref=e147]:
+          - generic [ref=e148]: TextCard-Studio
+          - generic [ref=e149]: 工具
+        - paragraph [ref=e150]: 小红书智能文字卡片：把内容自动排成适合社交平台的图文卡片。
+        - generic [ref=e151]:
+          - link "GitHub →" [ref=e152] [cursor=pointer]:
+            - /url: https://github.com/88lin/TextCard-Studio
+          - link "体验 →" [ref=e153] [cursor=pointer]:
+            - /url: https://88lin.github.io/TextCard
+      - article [ref=e154]:
+        - generic [ref=e155]:
+          - generic [ref=e156]: more ·
+          - generic [ref=e157]: diataxis-docs · mydesign-system · my-skills …
+        - paragraph [ref=e158]: 还有技术文档写作 Skill、个人 IP 设计系统、油猴脚本合集等十多个开源仓库，在 GitHub 上慢慢逛。
+        - link "github.com/88lin →" [ref=e160] [cursor=pointer]:
+          - /url: https://github.com/88lin
+      - article [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e163]: 开源进行时
+          - generic [ref=e164]: GitHub · 长期维护
+        - paragraph [ref=e165]: 所有项目的源码、更新动态与 Issue 讨论都在 GitHub；认真回复每一个 Issues，欢迎 Star 与共建。
+        - link "Follow @88lin →" [ref=e167] [cursor=pointer]:
+          - /url: https://github.com/88lin
+  - generic [ref=e169]:
+    - generic [ref=e170]: 03 · ~/sites
+    - heading "一个围绕「实用 + 有趣」 搭建的站点矩阵" [level=2] [ref=e171]:
+      - text: 一个围绕「实用 + 有趣」
+      - text: 搭建的站点矩阵
+    - paragraph [ref=e172]: 所有站点手机与电脑都能顺畅访问，一站一用，互相打通。
+    - generic [ref=e173]:
+      - link "茉灵智库 · 博客 内容主站：记录技术教程、资源共享与思考认知。 blog.88lin.eu.org" [ref=e174] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org
+        - strong [ref=e177]: 茉灵智库 · 博客
+        - paragraph [ref=e178]: 内容主站：记录技术教程、资源共享与思考认知。
+        - generic [ref=e179]: blog.88lin.eu.org
+      - link "工具导航站 影视、音乐、烟花特效与效率工具的统一入口。 go.88lin.eu.org" [ref=e180] [cursor=pointer]:
+        - /url: https://go.88lin.eu.org
+        - strong [ref=e183]: 工具导航站
+        - paragraph [ref=e184]: 影视、音乐、烟花特效与效率工具的统一入口。
+        - generic [ref=e185]: go.88lin.eu.org
+      - link "电脑维修技能 AI Agent 驱动的跨平台电脑维修助手。 repair.88lin.eu.org" [ref=e186] [cursor=pointer]:
+        - /url: https://repair.88lin.eu.org/
+        - strong [ref=e189]: 电脑维修技能
+        - paragraph [ref=e190]: AI Agent 驱动的跨平台电脑维修助手。
+        - generic [ref=e191]: repair.88lin.eu.org
+      - link "Lofi Radio 专注场景的低保真音乐电台，21 个精选频道。 lofi.88lin.eu.org" [ref=e192] [cursor=pointer]:
+        - /url: https://lofi.88lin.eu.org
+        - strong [ref=e195]: Lofi Radio
+        - paragraph [ref=e196]: 专注场景的低保真音乐电台，21 个精选频道。
+        - generic [ref=e197]: lofi.88lin.eu.org
+      - link "深度研究 面向深度研究场景的聚合工具。 research.88lin.eu.org" [ref=e198] [cursor=pointer]:
+        - /url: https://research.88lin.eu.org
+        - strong [ref=e201]: 深度研究
+        - paragraph [ref=e202]: 面向深度研究场景的聚合工具。
+        - generic [ref=e203]: research.88lin.eu.org
+      - link "知识分享 知识分享与科学前沿内容。 learn.88lin.eu.org" [ref=e204] [cursor=pointer]:
+        - /url: https://learn.88lin.eu.org
+        - strong [ref=e207]: 知识分享
+        - paragraph [ref=e208]: 知识分享与科学前沿内容。
+        - generic [ref=e209]: learn.88lin.eu.org
+      - link "倒计时应用 简洁的倒计时与时间感知小工具。 timepulse.ravelloh.top" [ref=e210] [cursor=pointer]:
+        - /url: https://timepulse.ravelloh.top
+        - strong [ref=e213]: 倒计时应用
+        - paragraph [ref=e214]: 简洁的倒计时与时间感知小工具。
+        - generic [ref=e215]: timepulse.ravelloh.top
+      - link "打印纸设计 在线打印纸与纸张模板设计工具。 88lin.github.io/PaperStudio" [ref=e216] [cursor=pointer]:
+        - /url: https://88lin.github.io/PaperStudio
+        - strong [ref=e219]: 打印纸设计
+        - paragraph [ref=e220]: 在线打印纸与纸张模板设计工具。
+        - generic [ref=e221]: 88lin.github.io/PaperStudio
+  - generic [ref=e223]:
+    - generic [ref=e224]: 04 · cat latest/
+    - heading "记录分享教程，与思维认知" [level=2] [ref=e225]
+    - paragraph [ref=e226]: 博客里最近更新的几篇，更多文章去归档里慢慢逛。
+    - generic [ref=e227]:
+      - link "2026-08-06 全网 VIP 视频免费看教程：短剧电视剧白嫖指南 →" [ref=e228] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/article/46
+        - generic [ref=e229]: 2026-08-06
+        - generic [ref=e230]: 全网 VIP 视频免费看教程：短剧电视剧白嫖指南
+        - generic [ref=e231]: →
+      - link "2026-07-31 实用生活指南：必备经验与高效技巧分享 →" [ref=e232] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/article/50
+        - generic [ref=e233]: 2026-07-31
+        - generic [ref=e234]: 实用生活指南：必备经验与高效技巧分享
+        - generic [ref=e235]: →
+      - link "2026-07-31 一键屏蔽流氓软件：Windows 防火墙 / Hosts / DNS 组合屏蔽教程 →" [ref=e236] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/article/12
+        - generic [ref=e237]: 2026-07-31
+        - generic [ref=e238]: 一键屏蔽流氓软件：Windows 防火墙 / Hosts / DNS 组合屏蔽教程
+        - generic [ref=e239]: →
+      - link "2026-07-31 Windows 系统问题排查与修复：电脑故障解决手册 →" [ref=e240] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/article/44
+        - generic [ref=e241]: 2026-07-31
+        - generic [ref=e242]: Windows 系统问题排查与修复：电脑故障解决手册
+        - generic [ref=e243]: →
+      - link "2026-07-31 电脑蓝屏终极解决办法：Windows 系统崩溃修复指南 →" [ref=e244] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/article/5
+        - generic [ref=e245]: 2026-07-31
+        - generic [ref=e246]: 电脑蓝屏终极解决办法：Windows 系统崩溃修复指南
+        - generic [ref=e247]: →
+      - link "2026-07-31 彻底卸载 360 和 2345 等流氓软件！ →" [ref=e248] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/article/9
+        - generic [ref=e249]: 2026-07-31
+        - generic [ref=e250]: 彻底卸载 360 和 2345 等流氓软件！
+        - generic [ref=e251]: →
+    - generic [ref=e252]:
+      - link "查看全部 55+ 篇文章 →" [ref=e253] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/archive
+      - link "RSS 订阅" [ref=e254] [cursor=pointer]:
+        - /url: https://blog.88lin.eu.org/rss/feed.xml
+  - generic [ref=e256]:
+    - generic [ref=e257]: 05 · contact
+    - heading "欢迎聊聊 AI Agent、工具链， 或者任何有趣的合作想法" [level=2] [ref=e258]:
+      - text: 欢迎聊聊 AI Agent、工具链，
+      - text: 或者任何有趣的合作想法
+    - paragraph [ref=e259]: 无论是 AI Agent 工程化、MCP 工具链与知识库，还是网站开发、电脑维修的需求，或者只是想打个招呼——都欢迎。
+    - generic [ref=e260]:
+      - link "✉️ 431761794@qq.com" [ref=e261] [cursor=pointer]:
+        - /url: mailto:431761794@qq.com
+      - link "💬 QQ 群" [ref=e262] [cursor=pointer]:
+        - /url: https://qm.qq.com/q/Q46OjlCcY8
+      - link "💚 微信公众号" [ref=e263] [cursor=pointer]:
+        - /url: https://go.88lin.eu.org/gzh/index.html
+      - link "📺 B 站" [ref=e264] [cursor=pointer]:
+        - /url: https://space.bilibili.com/1412014683
+      - link "🐙 GitHub" [ref=e265] [cursor=pointer]:
+        - /url: https://github.com/88lin
+  - contentinfo [ref=e266]:
+    - generic [ref=e267]:
+      - paragraph [ref=e268]: © 2021 - 2026 茉灵智库 · 88lin ✦ 收集有用的，也保留有趣的
+      - paragraph [ref=e269]:
+        - link "博客" [ref=e270] [cursor=pointer]:
+          - /url: https://blog.88lin.eu.org
+        - text: ·
+        - link "导航" [ref=e271] [cursor=pointer]:
+          - /url: https://go.88lin.eu.org
+        - text: ·
+        - link "友链" [ref=e272] [cursor=pointer]:
+          - /url: https://blog.88lin.eu.org/links
+        - text: ·
+        - link "RSS" [ref=e273] [cursor=pointer]:
+          - /url: https://blog.88lin.eu.org/rss/feed.xml
+        - link "桂ICP备21015360号" [ref=e274] [cursor=pointer]:
+          - /url: https://beian.miit.gov.cn/
+        - text: ·
+        - link "萌ICP备20249980号" [ref=e275] [cursor=pointer]:
+          - /url: https://icp.gov.moe/?keyword=20249980
+        - text: · Design tokens by
+        - link "mydesign-system" [ref=e276] [cursor=pointer]:
+          - /url: https://github.com/88lin/mydesign-system

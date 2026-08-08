@@ -1,33 +1,41 @@
-# hiesther.me ✦
+# 88lin · 茉灵智库 ✦
 
-不二的个人网站 — 一个非技术背景设计师用 AI 搓出来的互联网小家。
+我的个人网站 —— 一个 AI 研究者与 Agent 工程实践者的数字花园。
 
-🔗 **Live**: [hiesther.me](https://hiesther.me)
+## 设计
 
-## 关于
+- **明亮温暖** — 奶油底色，全站无暗色面板，文字清晰易读
+- **衬线大标题** — 标题用衬线（Fraunces + 思源宋体），正文用系统无衬线，混搭产生节奏
+- **设计 Token** — 配色遵循 [mydesign-system](https://github.com/88lin/mydesign-system) 语义化 token，主色 60 / 强调 30 / 点缀 10
 
-这是我的第三版个人网页，一个 IP 驱动的桌面风格网站。
+## 页面结构
 
-- **主页** — 教程、分享、HTML 展示页的入口
-- **作品集** — 产品设计作品与项目经历
-- **无限白板** — 自由探索的 Moodboard
+1. **Hero** — 大标题「把前沿 AI，做成能交付的东西」，明亮聚焦
+2. **关于我** — 一句话自我介绍 + 身份卡 + 终端卡 + 实时统计（建站天数 / Stars / 文章 / 入口）
+3. **精选项目** — Bento 网格：video_vip、lofi-radio-web、computer-repair-skill 等
+4. **站点矩阵** — 博客、导航站、维修站、Lofi Radio、深度研究等
+5. **最新文章** — 来自 [茉灵智库博客](https://blog.88lin.eu.org) 的最新内容
+6. **联系** — 邮箱 / QQ 群 / 公众号 / B 站 / GitHub
+
+## 交互细节
+
+- 顶部玻璃导航滚动联动高亮当前区块
+- 项目走马灯、滚动计数、卡片聚光灯、自定义光标（仅桌面）
+- 完整响应式；`prefers-reduced-motion` 下自动降级动效
+
+## 相关链接
+
+| 名称 | 地址 |
+|------|------|
+| 博客 | [blog.88lin.eu.org](https://blog.88lin.eu.org) |
+| 导航站 | [go.88lin.eu.org](https://go.88lin.eu.org) |
+| 设计系统 | [mydesign-system](https://github.com/88lin/mydesign-system) |
+| GitHub | [github.com/88lin](https://github.com/88lin) |
 
 ## 技术栈
 
-纯前端，零框架。HTML + CSS + Vanilla JS，部署在 GitHub Pages。
-
-## 版本进化
-
-| 版本 | 特点 | 文件 |
-|------|------|------|
-| Ver 1 | 简单自我介绍 | `website-ver1.html` |
-| Ver 2 | 终端穿越 + 无限白板 | `website-ver2.html` |
-| Ver 3 | 桌面 OS 风格，IP 载体 | `index.html` |
-
-## 制作工具
-
-这个网站 100% 由我和 [Cola](https://cola.app) 协作完成——我负责定调和审美决策，Cola 负责执行和发散。
+纯前端，零框架。HTML + CSS + Vanilla JS，零外部 3D 依赖。可直接部署在 GitHub Pages。
 
 ## License
 
-[CC BY-NC 4.0](./LICENSE.md) — 可以看、学习、参考，但请注明出处，不可商用。
+设计参考了开源个人网站模板的思路，遵循 [CC BY-NC 4.0](./LICENSE.md) — 可以看、学习、参考，但请注明出处，不可商用。
