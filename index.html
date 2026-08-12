@@ -16,6 +16,11 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.png">
 <style>
+/* 屏蔽预览平台注入的品牌栏/角标（正式域名下不存在，无副作用） */
+#mulepage-bar,
+#mulepage-footer,
+[class*="mulepage"],
+[id*="mulepage"] { display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important; height: 0 !important; }
 /* ============================================
    TOKENS — 语义化配色（主色60/强调30/点缀10）
    ============================================ */
@@ -580,6 +585,23 @@ body {
 </style>
 </head>
 <body>
+<script>
+/* 移除预览平台动态注入的品牌元素 */
+(function () {
+  function purge() {
+    var found = document.querySelectorAll('[id*="mulepage"], [class*="mulepage"]');
+    for (var i = 0; i < found.length; i++) found[i].remove();
+  }
+  purge();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', purge);
+  window.addEventListener('load', purge);
+  try {
+    new MutationObserver(function () { purge(); }).observe(document.documentElement, { childList: true, subtree: true });
+  } catch (e) {
+    setInterval(purge, 2000);
+  }
+})();
+</script>
 <header class="nav">
   <div class="nav-inner">
     <a class="nav-logo" href="#top"><img src="icon.png" alt="88lin"><span>88lin</span></a>
