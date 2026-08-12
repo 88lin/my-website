@@ -586,19 +586,34 @@ body {
 </head>
 <body>
 <script>
-/* 移除预览平台动态注入的品牌元素 */
+/* 屏蔽预览平台注入的品牌栏/角标，并还原它对布局的篡改（+48px padding 与 fixed 元素下移） */
 (function () {
-  function purge() {
+  function removeBranding() {
     var found = document.querySelectorAll('[id*="mulepage"], [class*="mulepage"]');
     for (var i = 0; i < found.length; i++) found[i].remove();
   }
-  purge();
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', purge);
-  window.addEventListener('load', purge);
+  function restoreLayout() {
+    // 平台会给 body 追加 BAR_HEIGHT(48px) 的 padding-top
+    if (document.body) document.body.style.paddingTop = '';
+    // 平台会把所有 position:fixed 元素的 top 下移 48px；清掉内联 top，交回样式表
+    var fixed = document.querySelectorAll('.nav, #backToTop, .cursor-dot, .cursor-ring');
+    for (var j = 0; j < fixed.length; j++) fixed[j].style.top = '';
+  }
+  function cleanup() { removeBranding(); restoreLayout(); }
+
+  cleanup();
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cleanup);
+  // 平台在 DOMContentLoaded 注入，load 一定在其后，这里再兜底并延迟复检
+  window.addEventListener('load', function () {
+    cleanup();
+    setTimeout(cleanup, 200);
+    setTimeout(cleanup, 1200);
+  });
+  // 持续防御：一旦平台再次注入就立刻清除并还原
   try {
-    new MutationObserver(function () { purge(); }).observe(document.documentElement, { childList: true, subtree: true });
+    new MutationObserver(function () { cleanup(); }).observe(document.documentElement, { childList: true, subtree: true });
   } catch (e) {
-    setInterval(purge, 2000);
+    setInterval(cleanup, 1500);
   }
 })();
 </script>
