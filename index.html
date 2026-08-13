@@ -582,6 +582,50 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-spark, .contact-panel::after { animation: none; opacity: 0.7; }
 }
+
+/* ============================================
+   V10 — checklist.design 风格：
+   粉彩分类色块 · 无边框大圆角 · 柔和弥散阴影 · 胶囊标签
+   ============================================ */
+:root {
+  --p-cream: #F6EDD3;
+  --p-blue: #DEE7F0;
+  --p-rose: #F3E3DC;
+  --p-sage: #E3E8E2;
+  --p-lav: #E7E4EC;
+  --p-peach: #F8E8DA;
+  --shadow-soft: 0 1px 3px rgba(28,28,30,0.04), 0 16px 36px rgba(28,28,30,0.06);
+  --shadow-lift: 0 2px 6px rgba(28,28,30,0.05), 0 22px 48px rgba(28,28,30,0.10);
+}
+/* 卡片无边框 · 大圆角 · 弥散阴影 */
+.b-cell, .id-card { border: none; border-radius: 22px; box-shadow: var(--shadow-soft); }
+.b-cell:hover { box-shadow: 0 2px 8px rgba(43,127,216,0.10), 0 24px 52px rgba(43,127,216,0.13); }
+.post-row { border-radius: 16px; }
+/* 站点矩阵 → 粉彩分类色块（无边框、无阴影，hover 轻浮起） */
+.site-cell { border: none; border-radius: 22px; box-shadow: none; background: var(--p-blue); transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+.site-cell:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+.site-cell.p-cream { background: var(--p-cream); }
+.site-cell.p-blue { background: var(--p-blue); }
+.site-cell.p-rose { background: var(--p-rose); }
+.site-cell.p-sage { background: var(--p-sage); }
+.site-cell.p-lav { background: var(--p-lav); }
+.site-cell.p-peach { background: var(--p-peach); }
+.site-cell strong { color: #1F1F22; }
+.site-cell p { color: #4A4A4E; }
+.site-cell .s-url {
+  display: inline-flex; align-self: flex-start; margin-top: 10px;
+  background: rgba(255,255,255,0.66); border-radius: 999px; padding: 4px 12px;
+  color: #5A5A60; font-size: 0.72rem;
+}
+/* 胶囊标签（暖底深字） */
+.b-tags span { background: #F2EFE6; border: none; color: #4A4A4E; }
+.b-platforms span { background: rgba(43,127,216,0.10); }
+/* 站点区背景更素，突出粉彩色块 */
+.sites { background: var(--cream); border-block: none; }
+.sites::before { display: none; }
+@media (max-width: 640px) {
+  .site-cell .s-url { font-size: 0.7rem; }
+}
 </style>
 </head>
 <body>
@@ -795,42 +839,42 @@ body {
     <p class="sec-desc reveal" style="--delay:120ms">所有站点手机与电脑都能顺畅访问，一站一用，互相打通。</p>
 
     <div class="sites-grid">
-      <a class="site-cell reveal" href="https://blog.88lin.eu.org" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-cream" href="https://blog.88lin.eu.org" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#F4D758"></span><strong>茉灵智库 · 博客</strong></div>
         <p>内容主站：记录技术教程、资源共享与思考认知。</p>
         <span class="s-url">blog.88lin.eu.org</span>
       </a>
-      <a class="site-cell reveal" style="--delay:60ms" href="https://go.88lin.eu.org" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-blue" style="--delay:60ms" href="https://go.88lin.eu.org" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#7FB4F2"></span><strong>工具导航站</strong></div>
         <p>影视、音乐、烟花特效与效率工具的统一入口。</p>
         <span class="s-url">go.88lin.eu.org</span>
       </a>
-      <a class="site-cell reveal" style="--delay:120ms" href="https://repair.88lin.eu.org/" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-rose" style="--delay:120ms" href="https://repair.88lin.eu.org/" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#E84A5F"></span><strong>电脑维修技能</strong></div>
         <p>AI Agent 驱动的跨平台电脑维修助手。</p>
         <span class="s-url">repair.88lin.eu.org</span>
       </a>
-      <a class="site-cell reveal" style="--delay:180ms" href="https://lofi.88lin.eu.org" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-sage" style="--delay:180ms" href="https://lofi.88lin.eu.org" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#4ade80"></span><strong>Lofi Radio</strong></div>
         <p>专注场景的低保真音乐电台，21 个精选频道。</p>
         <span class="s-url">lofi.88lin.eu.org</span>
       </a>
-      <a class="site-cell reveal" href="https://research.88lin.eu.org" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-blue" href="https://research.88lin.eu.org" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#7FB4F2"></span><strong>深度研究</strong></div>
         <p>面向深度研究场景的聚合工具。</p>
         <span class="s-url">research.88lin.eu.org</span>
       </a>
-      <a class="site-cell reveal" style="--delay:60ms" href="https://learn.88lin.eu.org" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-cream" style="--delay:60ms" href="https://learn.88lin.eu.org" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#F4D758"></span><strong>知识分享</strong></div>
         <p>知识分享与科学前沿内容。</p>
         <span class="s-url">learn.88lin.eu.org</span>
       </a>
-      <a class="site-cell reveal" style="--delay:120ms" href="https://timepulse.ravelloh.top" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-sage" style="--delay:120ms" href="https://timepulse.ravelloh.top" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#4ade80"></span><strong>倒计时应用</strong></div>
         <p>简洁的倒计时与时间感知小工具。</p>
         <span class="s-url">timepulse.ravelloh.top</span>
       </a>
-      <a class="site-cell reveal" style="--delay:180ms" href="https://88lin.github.io/PaperStudio" target="_blank" rel="noreferrer">
+      <a class="site-cell reveal p-peach" style="--delay:180ms" href="https://88lin.github.io/PaperStudio" target="_blank" rel="noreferrer">
         <div class="s-top"><span class="s-dot" style="background:#E84A5F"></span><strong>打印纸设计</strong></div>
         <p>在线打印纸与纸张模板设计工具。</p>
         <span class="s-url">88lin.github.io/PaperStudio</span>
